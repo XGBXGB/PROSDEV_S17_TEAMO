@@ -1,0 +1,331 @@
+
+.logi-icon {
+    float:left;
+    margin-top:4px;
+    width: 60px;
+    height:55px;
+    margin-right: 10px;
+}
+
+.nav-container {
+    padding-left: 20px;
+}
+
+.nav-title {
+    padding-left:10px;
+    font-size: 25px !important;
+}
+
+.nav-title-container {
+    float:left;
+    padding-left: 10px;
+}
+
+
+
+.nav-logo {
+    
+    float:left;
+}
+
+.main-reserve .container{
+    width:90%;   
+}
+
+.departure-card .container{
+    width:100%;   
+}
+
+.reserve-card-title {
+    width:100%;
+    text-align:center;
+    font-size: 2em;
+    padding-bottom:10px !important;
+    
+}
+
+.route-label {
+    font-size: 1.6em;
+}
+
+.reserve-container {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+.card-reserve{  
+    min-width:440px;
+    padding:0 !important;
+}
+
+.card-reserve .input{
+   border-bottom: 1px solid orange !important;
+  -webkit-box-shadow: 0 1px 0 0 orange !important;
+  -moz-box-shadow: 0 1px 0 0 orange !important;
+  box-shadow: 0 1px 0 0 orange !important;
+}
+
+.input-field input[type=text] {
+     border-bottom: 1px solid white;
+}
+
+.input-field label {
+     color:white;
+}
+
+.select-wrapper span.caret{
+    color:lightgray !important;
+}
+
+.select-wrapper input.select-dropdown{
+    color:white !important;
+}
+
+
+
+.trip-type label.white-text::before{
+    border-color: white;
+}
+
+.trip-type label::after{
+    border-color: white !important;
+    background-color:white !important;
+}
+
+.trip-type .with-gap:checked + label.white-text::before{
+    border-color: white;
+}
+
+.input-field {
+    margin-top:0;
+    padding-top:4px !important;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    white;
+}
+
+.card-title {
+    font-size:20px !important;
+}
+
+.divider {
+    margin: 15px;
+    background-color:lightgray;
+}
+
+.card-label {
+    font-size:20px;
+    font-family: roboto;
+    font-weight: 300;
+    padding-top: 10px !important;
+    
+}
+
+.card-header {
+    font-size:20px;
+    font-family: roboto;
+    font-weight: 400;
+    padding-top: 10px !important;
+}
+
+.nav-wrapper {
+    background-color: #109E25;
+}
+
+.departure-card{
+    padding-top:5px;
+}
+
+.departure-card .card-image img{
+    height:100%;
+    width:100%;
+    margin-top:-20%;
+}
+
+.departure-card .card-image{
+    max-height: 150px;
+    overflow: hidden;
+}
+
+.departure-card .card-content{
+    font-size: 16px;
+    max-height: 100px;
+    padding: 0 !important;
+    margin:0 !important;
+}
+
+
+.vehicle-num-grp{
+    float:inherit;
+    width:100%;
+    padding-bottom: 10px;
+}
+.vehicle-capacity-grp {
+    float: inherit;
+    width:100%;
+    padding-bottom: 10px;
+}
+
+.departure-card .card-title{
+    font-weight: 500;   
+}
+
+
+
+.reserve-btn {
+    margin-top:20px;
+    width:100%;
+}
+
+
+.reserve-type .container{
+    margin-left:50px;
+    margin-top:20px;
+}
+.reserve-lbl {
+    margin-top:8px;
+    font-size:1.4em
+}
+
+.reserve-type .input-field input[type=text] {
+     border-bottom: 1px solid #43A047;
+}
+
+.reserve-type .select-wrapper input.select-dropdown{
+    color:black !important;
+}
+
+.browser-default {
+    border-color:lightgray;
+}
+
+.reserve-box {
+    width:180px !important;
+}
+
+.trip-table {
+    max-height:450px;
+    overflow-y: scroll;
+}
+
+.manage-trip-table {
+    max-height:400px;
+    overflow-y: scroll;
+}
+
+.suspended-trip-table {
+    max-height:400px;
+    overflow-y: scroll;
+}
+
+
+.new-trip-div {
+    margin-top:30px;
+}
+
+@media (max-width:360px){
+    .reserve-container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .card-reserve .card-content{
+        padding-left:0px !important;
+        padding-right:0px !important;
+    }
+    
+    .logi-icon{
+        display:none;
+    }
+    
+    .main-reserve .container{
+        width:90%;   
+    }
+}
+
+@media (max-width:360px){
+    .reserve-container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .card-reserve .card-content{
+        padding-left:0px !important;
+        padding-right:0px !important;
+    }
+    
+    .logi-icon{
+        display:none;
+    }
+    
+    .main-reserve .container{
+        width:90%;   
+    }
+}
+
+@media (max-width:992px){
+    .main-reserve .main-container{
+        min-width:760px;
+    }
+    .nav-container{
+        min-width:760px;
+    }
+    .card-label {
+    }
+    
+    .card-reserve{  
+        min-width:320px;
+    }
+    .card-reserve-col{  
+        min-width:320px;
+    }
+    .departure-card .container{
+        
+    }
+
+}
+
+@media (max-width:600px){
+    .nav-title{
+        color:yellow !important;
+    }
+    .main-reserve .main-container{
+        min-width:320px;
+    }
+    
+    .nav-container{
+        min-width:0px
+    }
+}
+
+
+
+.upcoming-trip {
+    padding-top: 15px;
+    border: solid 1px grey
+}
+
+.upcoming-btn {
+    margin-bottom: 8px;
+    height:110px;
+    background-color:transparent;
+    color:black;
+    border: 1px solid #6ADD6C;
+}
+
+.upcoming-btn:focus {
+    background-color:#29A9F7;
+}
+
+.upcoming-btn:hover {
+    background-color:#80C7F2;
+}
+
+.upcoming-btn .col{
+    text-align: left;
+    text-transform: none;
+}
+
+.upcoming-lbl{
+    height:100%;   
+}
