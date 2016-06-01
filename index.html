@@ -13,43 +13,52 @@
     </head>
 
     <body>
-        <section class="header">
-            <section class="nav">
-                <nav>
-                    <div class="nav-wrapper nav-container teal accent-4">
-                        <a href="#" class="brand-logo"> TEAMO</a>
-                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a class="waves-effect waves-light btn compose-btn"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
-                            <li class="active"><a href="badges.html">Home</a></li>
-                            <li><a href="sass.html">About Us</a></li>
-                            <li><a href="sass.html">Logout</a></li>
-                        </ul>
-                        <ul class="side-nav" id="mobile-demo">
-                            <li><a class="waves-effect waves-light btn" href="sass.html"><i class="material-icons left white">mode_edit</i>New Post</a></li>
-                            <li><a href="sass.html">Home</a></li>
-                            <li><a href="badges.html">About Us</a></li>
-                            <li><a href="collapsible.html">Logout</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </section>
-        </section>
-        
-        <section class = "content front-fullbg">
+        <section class = "content front-fullbg" style = "margin:0;">
             <div class = "row front-title">
                 T E A M O
             </div>
             <div class = "row front-desc">
                 Blog - Discover - Learn
             </div>
-            <div class = "row front-btn bgcolor-teal txtcolor-white">
+            <div id = "signupbtn" class = "row front-btn bgcolor-teal txtcolor-white signup-modal-trigger" href="#modal-signup">
                 Sign up
             </div>
-            <div class = "row front-btn bgcolor-white txtcolor-teal">
+            <div id = "signinbtn" class = "row front-btn bgcolor-white txtcolor-teal signin-modal-trigger" href="#modal-signin">
                 Sign in
             </div>
         </section>
+        
+        
+                
+         <!-- Modal Trigger -->
+  <!--a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+        <h4>Sign up</h4>
+        <input type="text" placeholder = "Email">
+        <input type="text" placeholder = "Username"> 
+        <input type="password" placeholder = "Password">
+        <input type="password" placeholder = "Re-enter Password">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+    </div>
+  </div>
+        
+  <div id="modal-signin" class="modal">
+    <div class="modal-content">
+      <h4>Sign in</h4>
+        <input type="text" placeholder = "Username"> 
+        <input type="password" placeholder = "Password">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign in</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+    </div>
+  </div>
         
         
         
@@ -68,6 +77,14 @@
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
             $(".button-collapse").sideNav();
+            
+            //modal stuff
+            $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.signup-modal-trigger').leanModal();
+            $('.signin-modal-trigger').leanModal();
+                
+          });
         </script>
     </body>
 </html>
