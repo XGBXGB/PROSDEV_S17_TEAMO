@@ -21,12 +21,12 @@
                         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
                             <li><a class="waves-effect waves-light btn compose-btn"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
-                            <li class="active"><a href="badges.html">Home</a></li>
+                            <li><a href="badges.html">Home</a></li>
                             <li><a href="sass.html">About Us</a></li>
                             <li><a href="sass.html">Logout</a></li>
                         </ul>
                         <ul class="side-nav" id="mobile-demo">
-                            <li><a class="waves-effect waves-light btn" href="sass.html"><i class="material-icons left white">mode_edit</i>New Post</a></li>
+                            <li><a class="waves-effect waves-light btn" href="sass.html"><i class="material-icons left">mode_edit</i>New Post</a></li>
                             <li><a href="sass.html">Home</a></li>
                             <li><a href="badges.html">About Us</a></li>
                             <li><a href="collapsible.html">Logout</a></li>
@@ -39,7 +39,19 @@
             
         </section>
         
-        
+        <div class="container">
+            <form>
+                <div class="input-field">
+                    <input id="title" type="text">
+                    <label for="title">Title</label>
+                </div>
+                <div class="input-field">
+                    <textarea id="content" class="materialize-textarea"></textarea>
+                    <label for="content">Content</label>
+                </div>
+                <a class="waves-effect waves-light btn right"><i class="material-icons left">cloud</i>Save</a>
+            </form>
+        </div>
         
         
       <!--Import jQuery before materialize.js-->
