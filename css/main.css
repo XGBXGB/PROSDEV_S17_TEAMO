@@ -81,8 +81,8 @@ html, body {
 
 .front-fullbg
 {
-    width: 100%;
-    background-color: #152737;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .front-title
@@ -134,4 +134,7 @@ html, body {
 .txtcolor-white
 {
     color: white;
+}
+#signinbtn {
+    cursor: pointer;
 }
