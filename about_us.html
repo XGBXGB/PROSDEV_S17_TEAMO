@@ -15,24 +15,26 @@
     <body>
         <section class="header">
             <section class="nav">
-                <nav>
-                    <div class="nav-wrapper nav-container teal accent-4">
-                        <a href="#" class="brand-logo"> TEAMO</a>
-                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a class="waves-effect waves-light btn compose-btn" href="new_post.html"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
-                            <li><a href="view_posts.html">Home</a></li>
-                            <li class="active"><a href="about_us.html">About Us</a></li>
-                            <li><a href="index.html">Logout</a></li>
-                        </ul>
-                        <ul class="side-nav teal" id="mobile-demo">
-                            <li><a href="new_post.html" class="white-text"><i class="material-icons left">mode_edit</i>New Post</a></li>
-                            <li><a href="view_posts.html" class="white-text">Home</a></li>
-                            <li class="active"><a href="about_us.html" class="white-text">About Us</a></li>
-                            <li><a href="index.html" class="white-text">Logout</a></li>
-                        </ul>
-                    </div>
-                </nav>
+                <div class="navbar-fixed">
+                    <nav>
+                        <div class="nav-wrapper nav-container transparent grow">
+                            <a href="#" class="brand-logo pad-nav-top"> TEAMO</a>
+                            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                            <ul id="nav-mobile" class="right hide-on-med-and-down pad-nav-top">
+                                <li><a class="waves-effect waves-light btn compose-btn" href="new_post.html"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
+                                <li><a href="view_posts.html">Home</a></li>
+                                <li class="active"><a href="about_us.html">About Us</a></li>
+                                <li><a href="index.html">Logout</a></li>
+                            </ul>
+                            <ul class="side-nav teal" id="mobile-demo">
+                                <li><a href="new_post.html" class="white-text"><i class="material-icons left">mode_edit</i>New Post</a></li>
+                                <li><a href="view_posts.html" class="white-text">Home</a></li>
+                                <li class="active"><a href="about_us.html" class="white-text">About Us</a></li>
+                                <li><a href="index.html" class="white-text">Logout</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
             </section>
             
             <div class="about-us-main" style="margin:0;padding:0;">
@@ -140,6 +142,26 @@
             
             $(document).ready(function() {
                 $('select').material_select();
+                
+                $(window).scroll(function() {
+                    var scroll = $(window).scrollTop();
+
+                    if (scroll >= 100) {
+                        $('.nav-wrapper').removeClass("grow");
+                        $('.nav-wrapper').addClass("teal");
+                        $('.nav-wrapper').addClass("accent-4");
+                        $('#nav-mobile').removeClass("pad-nav-top");
+                        $('.nav-wrapper').removeClass("transparent");
+                        $('.brand-logo').removeClass("pad-nav-top");
+                    } else {
+                        $('.nav-wrapper').addClass("grow");
+                        $('.nav-wrapper').removeClass("teal");
+                        $('.nav-wrapper').removeClass("accent-4");
+                        $('#nav-mobile').addClass("pad-nav-top");
+                        $('.nav-wrapper').addClass("transparent");
+                        $('.brand-logo').addClass("pad-nav-top");
+                    }
+                });
             });
             
             
