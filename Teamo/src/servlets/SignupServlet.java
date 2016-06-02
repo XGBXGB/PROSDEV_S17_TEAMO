@@ -1,7 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -10,17 +9,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.Controller;
-//import Controller.Controller;
 import model.User;
 
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+/**
+ * Servlet implementation class SignupServlet
+ */
+@WebServlet("/SignupServlet")
+public class SignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public LoginServlet() {
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public SignupServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getSession().setAttribute("Error", "Invalid");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
@@ -28,19 +32,9 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Controller m = new Controller();
-		User user = m.getUser(request.getParameter("username"), request.getParameter("password"));
-		System.out.println("INSIDE DO POST");
-		
-		if(user != null)
-		{
-			System.out.println("INSIDE USER COOKIE");
-			response.addCookie(new Cookie("user", String.valueOf(user.getId())));
-			request.getSession().setAttribute("Posts", m.getPosts());
+		if(request.getParameter("SUpassword").equals(request.getParameter("SUpassword2")))
+			m.addUser(request.getParameter("SUemail"), request.getParameter("SUusername"), request.getParameter("SUpassword"));
+		response.sendRedirect("index.jsp");
 
-			response.sendRedirect("view_posts.jsp");
-		}
-		else
-			doGet(request, response);
 	}
-
 }

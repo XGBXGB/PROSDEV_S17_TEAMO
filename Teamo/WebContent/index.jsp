@@ -36,20 +36,21 @@
   <!--a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
   <!-- Modal Structure -->
+     <form action="SignupServlet" method="post"> 
   <div id="modal-signup" class="modal">
     <div class="modal-content">
         <h4>Sign up</h4>
-        <input type="text" placeholder = "Email">
-        <input type="text" placeholder = "Username"> 
-        <input type="password" placeholder = "Password">
-        <input type="password" placeholder = "Re-enter Password">
+        <input type="text" placeholder = "Email" name = "SUemail">
+        <input type="text" placeholder = "Username" name = "SUusername"> 
+        <input type="password" placeholder = "Password" name = "SUpassword">
+        <input type="password" placeholder = "Re-enter Password" name = "SUpassword2">
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat teal-text">Sign up</a>
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+      <input type = "submit" class = "waves-effect waves-green btn teal-text" value = "Sign Up">
+      <a class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
     </div>
   </div>
-       
+  </form>
   
    <form action="LoginServlet" method="post">      
   <div id="modal-signin" class="modal">
@@ -61,8 +62,7 @@
     <div class="modal-footer">
       <input type = "submit" class = "waves-effect waves-green btn teal-text" value = "Log in">
       <!-- a href="#!" class=" modal-action modal-close waves-effect waves-green btn teal-text">Log in</a-->
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
-    </div>
+	  <a class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>    </div>
   </div>
   </form>
         

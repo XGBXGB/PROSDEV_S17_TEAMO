@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 
   <!DOCTYPE html>
 <html>
@@ -21,16 +23,16 @@
                             <a href="#" class="brand-logo pad-nav-top"> TEAMO</a>
                             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                             <ul id="nav-mobile" class="right hide-on-med-and-down pad-nav-top">
-                                <li><a class="waves-effect waves-light btn compose-btn" href="new_post.html"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
-                                <li><a href="view_posts.html">Home</a></li>
-                                <li class="active"><a href="about_us.html">About Us</a></li>
-                                <li><a href="index.html">Logout</a></li>
+                                <li><a class="waves-effect waves-light btn compose-btn" href="new_post.jsp"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
+                                <li><a href="view_posts.jsp">Home</a></li>
+                                <li class="active"><a href="about_us.jsp">About Us</a></li>
+                                <li><a href="index.jsp">Logout</a></li>
                             </ul>
                             <ul class="side-nav teal" id="mobile-demo">
-                                <li><a href="new_post.html" class="white-text"><i class="material-icons left">mode_edit</i>New Post</a></li>
-                                <li><a href="view_posts.html" class="white-text">Home</a></li>
-                                <li class="active"><a href="about_us.html" class="white-text">About Us</a></li>
-                                <li><a href="index.html" class="white-text">Logout</a></li>
+                                <li><a href="new_post.jsp" class="white-text"><i class="material-icons left">mode_edit</i>New Post</a></li>
+                                <li><a href="view_posts.jsp" class="white-text">Home</a></li>
+                                <li class="active"><a href="about_us.jsp" class="white-text">About Us</a></li>
+                                <li><a href="index.jsp" class="white-text">Logout</a></li>
                             </ul>
                         </div>
                     </nav>

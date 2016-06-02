@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import connector.DBConnection;
 import connector.MySQLConnector;
 import model.Post;
 import model.User;
@@ -16,7 +17,8 @@ import model.User;
 public class PostsDAO {
 
 	public void addPost(String title, String content, int userId) {
-		Connection conn = MySQLConnector.getConnection();
+		//Connection conn = MySQLConnector.getConnection();
+		Connection conn = DBConnection.getConnection();
 		String query = "INSERT INTO posts(title, content, user_id, date) VALUES(?, ?, ?, ?);";
 		PreparedStatement ps;
 		try {
@@ -34,7 +36,8 @@ public class PostsDAO {
 	}
 	
 	public List<Post> getPosts() {
-		Connection conn = MySQLConnector.getConnection();
+		//Connection conn = MySQLConnector.getConnection();
+		Connection conn = DBConnection.getConnection();
 		String query = 
 				"SELECT title, content, username, date FROM posts P "
 				+ "INNER JOIN users U "
@@ -47,7 +50,7 @@ public class PostsDAO {
 			ps = conn.prepareStatement(query);
 		    rs = ps.executeQuery();
 		    while(rs.next()) {
-		    	posts.add(new Post(rs.getString(0), rs.getString(1), rs.getString(2), rs.getString(3)));
+		    	posts.add(new Post(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)));
 		    }
 		    conn.close();
 		} catch (SQLException e) {
