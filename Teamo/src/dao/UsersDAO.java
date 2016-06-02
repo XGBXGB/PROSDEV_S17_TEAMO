@@ -5,13 +5,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import connector.DBConnection;
 import connector.MySQLConnector;
 import model.User;
 
 public class UsersDAO {
 
 	public void addUser(String email, String username, String password) {
-		Connection conn = MySQLConnector.getConnection();
+		//Connection conn = MySQLConnector.getConnection();
+		Connection conn = DBConnection.getConnection();
 		String query = "INSERT INTO users(email, username, password) VALUES(?, ?, ?);";
 		PreparedStatement ps;
 		try {
@@ -28,7 +30,8 @@ public class UsersDAO {
 	}
 	
 	public User login(String username, String password) {
-		Connection conn = MySQLConnector.getConnection();
+		//Connection conn = MySQLConnector.getConnection();
+		Connection conn = DBConnection.getConnection();
 		String query = "SELECT * FROM users WHERE username = ? AND password = ?;";
 		PreparedStatement ps;
 		ResultSet rs;

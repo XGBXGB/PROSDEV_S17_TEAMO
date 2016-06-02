@@ -27,7 +27,7 @@ public class MySQLConnector {
 	{
 		if(conn == null) {
 			try {
-				TextFileConfiguration file = new TextFileConfiguration("config.txt");
+				TextFileConfiguration file = new TextFileConfiguration("C:\\Users\\user\\workspace\\Teamo\\src\\config.txt");
 				file.read();
 				Class.forName(driver).newInstance();
 				conn = DriverManager.getConnection(url+dbName,userName,pass);

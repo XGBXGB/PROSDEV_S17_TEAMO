@@ -1,0 +1,160 @@
+html, body {
+    margin:0;
+    padding:0;
+    background-color: #152737;
+}
+.brand-logo {
+    padding-left:15px !important;
+    font-family:Print Clearly;
+    font-size: 3em !important;
+    transition: all 0.4s ease;
+}
+
+.compose-icon {
+    height:100% !important;
+    font-size:1.8em !important;
+    line-height:40px !important;
+}
+
+.compose-btn {
+    width:50px;
+    padding:0
+}
+
+.what-is-teamo {
+    padding-top:50px;
+    padding-bottom: 30px;
+    text-align: center;
+    color:white;
+    line-height:1;
+}
+
+.what-is {
+    font-size: 3em;
+    font-family: fonarto;
+    padding-right:10px;
+}
+
+.teamo-lbl {
+    font-family:print clearly;
+    font-size: 8em;
+}
+
+.about-us-main {
+    background-color: #152737;
+}
+
+.question-mark{
+    font-family: fonarto;
+    font-size: 2.5em;
+    padding-left:10px;
+}
+.about-teamo {
+    padding-bottom:60px;
+    color:white;
+    font-size: 1.5em;
+    font-family: calibri;
+    text-align: center
+}
+
+.member-img img{
+    width:auto;
+    height:100px;
+}
+
+.name-wrapper {
+    height:100px;
+}
+
+.member-name {
+    color:white;
+    font-size: 1.5em;
+    width:100%;
+}
+
+.team-desc {
+    padding-bottom:50px;
+}
+
+.footer-space {
+    height:100px
+}
+
+.front-fullbg
+{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.front-title
+{
+    text-align: center;
+    width: 100%;
+    font-size: 175px;
+    font-family: Print Clearly;
+    color: white;
+    padding: 0;
+    padding-top: 70px;
+}
+
+.front-desc
+{
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+    font-family: Print Clearly;
+    color: white;
+    margin-top: -90px;
+}
+
+.front-btn
+{
+    text-align: center;
+    font-size: 22px;
+    height: 40px;
+    width: 50%;
+    color: white;
+    padding-top: 3px;
+}
+
+.bgcolor-teal
+{
+    background-color: #0fb492;
+}
+
+.bgcolor-white
+{
+    background-color: white;
+}
+
+.txtcolor-teal
+{
+    color: #0fb492;
+}
+
+.txtcolor-white
+{
+    color: white;
+}
+#signinbtn {
+    cursor: pointer;
+}
+
+.grow{
+    height:80px !important;   
+}
+.pad-nav-top {
+    padding-top:8px !important;
+}
+
+.transparent{
+    background-color:#152737 !important;   
+}
+.nav-wrapper {
+    transition: all 0.4s ease;
+}
+
+#nav-mobile {
+    transition: all 0.4s ease;
+}
+
