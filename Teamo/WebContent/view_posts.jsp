@@ -51,74 +51,24 @@
 
 
       <div class="container center-aligned">
+      	<div class="row">
       <%
 	       while(iposts.hasNext())
 	       {
 	    	   Post p = iposts.next();
        %>
-        <div class="row">
         
-        <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title"><%=p.getTitle() %></span>
-              <p class="truncate"><%=p.getContent() %></p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        
+	        <div class="card blue-grey darken-1">
+	            <div class="card-content white-text">
+	              <span class="card-title"><%=p.getTitle() %></span>
+	              <p class="truncate"><%=p.getContent() %></p>
+	            </div>
+	            <div class="card-action">
+	              <a href="#">This is a link</a>
+	            </div>
+	        </div>
+	        
         <%} %>
-        
-          <!-- div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p class="truncate">I am a very simple card. I am good at containing small bits of information. I asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdfasdfasdfasdfasdfasdfasdfasdfasdfam convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div-->
         </div>
       </div>
 
