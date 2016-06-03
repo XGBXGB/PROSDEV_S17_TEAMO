@@ -24,6 +24,11 @@ public class Controller {
 		return ud.login(username, password);
 	}
 	
+	public String getUserName(int id)
+	{
+		return ud.getUserName(id);
+	}
+	
 	public void addPost(String title, String content, int userId)
 	{
 		pd.addPost(title, content, userId);

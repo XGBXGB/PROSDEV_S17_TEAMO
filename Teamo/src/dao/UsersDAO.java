@@ -51,4 +51,26 @@ public class UsersDAO {
 		}
 		return u;
 	}
+	
+	public String getUserName(int id)
+	{
+		Connection conn = DBConnection.getConnection();
+		String query = "SELECT username FROM users WHERE id = ?;";
+		PreparedStatement ps;
+		ResultSet rs;
+		String u = "";
+		try {
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, id);
+		    rs = ps.executeQuery();
+		    if(rs.next()) {
+		    	u = rs.getString(1);
+		    }
+		    conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return u;
+	}
 }
