@@ -158,3 +158,45 @@ html, body {
     transition: all 0.4s ease;
 }
 
+@media (max-width:992px){
+    .brand-logo{
+        color:pink !important;
+    }
+}
+
+@media (max-width:600px){
+    .brand-logo{
+        color:yellow !important;
+    }
+    .team-desc .container{
+        min-width:450px !important;
+    }
+    
+    
+}
+
+@media (max-width:600px){
+   .team-desc .container{
+       min-width:7px !important;
+   }
+    
+   .member-img img{
+        height:80px;
+    }
+    .member-name {
+        font-size: 1.3em;
+    }
+    .name-wrapper{
+        height:80px;
+    }
+}
+
+@media (max-width:360px){
+    
+    
+    
+}
+@media (max-width:320px){
+    
+
+
