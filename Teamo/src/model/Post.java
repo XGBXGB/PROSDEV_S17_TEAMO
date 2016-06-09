@@ -1,7 +1,8 @@
 package model;
 
 public class Post {
-
+	
+	private int id;
 	private String title;
 	private String content;
 	private String username;
@@ -12,6 +13,10 @@ public class Post {
 		this.content = content;
 		this.username = username;
 		this.date = date;
+	}
+	
+	public int getPostId() {
+		return id;
 	}
 	
 	public String getTitle() {
