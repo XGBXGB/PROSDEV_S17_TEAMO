@@ -29,6 +29,22 @@ html, body {
     line-height:1;
 }
 
+.member-description-left {
+    padding-top:0px;
+    padding-bottom: 20px;
+    text-align: left;
+    color:white;
+    line-height:1;
+}
+
+.member-description-right {
+    padding-top:0px;
+    padding-bottom: 20px;
+    text-align: right;
+    color:white;
+    line-height:1;
+}
+
 .what-is {
     font-size: 3em;
     font-family: fonarto;
