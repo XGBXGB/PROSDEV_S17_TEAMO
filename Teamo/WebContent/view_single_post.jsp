@@ -1,10 +1,7 @@
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-<%@page import="java.util.ArrayList"%>
-<%@page import="model.Post"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,11 +16,6 @@
     </head>
 
     <body>
-        <%
-		List<Post> posts = (List<Post>)session.getAttribute("Posts");
-    	Iterator<Post> iposts = posts.iterator();
-        %>
-    
       <section class="header">
         <section class="nav">
             <div class="navbar-fixed">
@@ -32,16 +24,16 @@
                         <a href="#" class="brand-logo pad-nav-top"> TEAMO</a>
                         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                         <ul id="nav-mobile" class="right hide-on-med-and-down pad-nav-top">
-                            <li><a class="waves-effect waves-light btn compose-btn" href="new_post.jsp"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
-                            <li class="active"><a href="view_posts.jsp">Home</a></li>
-                            <li><a href="about_us.jsp">About Us</a></li>
-                            <li><a href="index.jsp">Logout</a></li>
+                            <li><a class="waves-effect waves-light btn compose-btn" href="new_post.html"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
+                            <li class="active"><a href="view_posts.html">Home</a></li>
+                            <li><a href="about_us.html">About Us</a></li>
+                            <li><a href="index.html">Logout</a></li>
                         </ul>
                         <ul class="side-nav teal" id="mobile-demo">
-                            <li><a href="new_post.jsp" class="white-text"><i class="material-icons left">mode_edit</i>New Post</a></li>
-                            <li class="active"><a href="view_posts.jsp" class="white-text">Home</a></li>
-                            <li><a href="about_us.jsp" class="white-text">About Us</a></li>
-                            <li><a href="index.jsp" class="white-text">Logout</a></li>
+                            <li><a href="new_post.html" class="white-text"><i class="material-icons left">mode_edit</i>New Post</a></li>
+                            <li class="active"><a href="view_posts.html" class="white-text">Home</a></li>
+                            <li><a href="about_us.html" class="white-text">About Us</a></li>
+                            <li><a href="index.html" class="white-text">Logout</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -51,28 +43,28 @@
 
 
       <div class="container center-aligned">
-      	<div class="row">
-      <%
-	       while(iposts.hasNext())
-	       {
-	    	   Post p = iposts.next();
-       %>
-        
-	        <div class="card blue-grey darken-1">
-	            <div class="card-content white-text">
-	              <span class="card-title"><%=p.getTitle() %></span>
-	              <p class="truncate"><%=p.username() %></p>
-	              <p class="truncate"><%=p.date() %></p>
-	              <p class="truncate"><%=p.getContent() %></p>
-	            </div>
-	            <form>
-	            <div class="card-action">
-	               <input type = "Submit" class=" modal-action modal-close waves-effect waves-green btn white-text" value = "view comments">
-	            </div>
-	            </form>
-	        </div>
-	        
-        <%} %>
+        <div class="row">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <h2>Card Title</h2>
+              <p>I am a very simple card. I am good at containing small bits of information. I asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdfasdfasdfasdfasdfasdfasdfasdfasdfam convenient because I require little markup to use effectively.</p>
+            </div>
+              <div class="card-content white-text">
+              <h5 class = "white-text">COMMENTS</h3>
+                  <p>person: comment 1</p>
+                  <p>person: comment 2</p>
+              </div>
+            <div class="card-action">
+                <form>
+                <input type = "text" placeholder = "place comment here" class = "white-text">
+                <input type = "Submit" class=" modal-action modal-close waves-effect waves-green btn white-text" value = "add Comment">
+                </form>
+              <!--a href="#">This is a link</a-->
+            </div>
+          </div>
+
+         
+          </div>
         </div>
       </div>
 
