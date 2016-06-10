@@ -23,16 +23,16 @@
                             <a href="#" class="brand-logo pad-nav-top"> TEAMO</a>
                             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                             <ul id="nav-mobile" class="right hide-on-med-and-down pad-nav-top">
-                                <li><a class="waves-effect waves-light btn compose-btn" href="new_post.jsp"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
-                                <li><a href="view_posts.jsp">Home</a></li>
-                                <li class="active"><a href="about_us.jsp">About Us</a></li>
-                                <li><a href="index.jsp">Logout</a></li>
+                                <li><a class="waves-effect waves-light btn compose-btn" href="new_post.html"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
+                                <li><a href="view_posts.html">Home</a></li>
+                                <li class="active"><a href="about_us.html">About Us</a></li>
+                                <li><a href="index.html">Logout</a></li>
                             </ul>
                             <ul class="side-nav teal" id="mobile-demo">
-                                <li><a href="new_post.jsp" class="white-text"><i class="material-icons left">mode_edit</i>New Post</a></li>
-                                <li><a href="view_posts.jsp" class="white-text">Home</a></li>
-                                <li class="active"><a href="about_us.jsp" class="white-text">About Us</a></li>
-                                <li><a href="index.jsp" class="white-text">Logout</a></li>
+                                <li><a href="new_post.html" class="white-text"><i class="material-icons left">mode_edit</i>New Post</a></li>
+                                <li><a href="view_posts.html" class="white-text">Home</a></li>
+                                <li class="active"><a href="about_us.html" class="white-text">About Us</a></li>
+                                <li><a href="index.html" class="white-text">Logout</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -52,63 +52,64 @@
                             <div class="divider"></div>
                         </div>
                         <div class="col s12 m12 l12">
-                            <div class="what-is-teamo">
-                                <span class="what-is">The Team-o</span>
-                            </div>
+                            
                             <div class="team-desc">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col s12">
-                                            <div class="col s2">
+                                <div class="container" style="width:100%;max-width:600px">
+                                    <div class="row" style="margin:0">
+                                        <div class="what-is-teamo">
+                                <span class="what-is">The Team</span>
+                            </div>
+                                        <div class="col s12 member-wrapper">
+                                            <div class="col s3 m3 l3" style="minpx">
                                                 <div class="member-img">
                                                     <img class="circle" src="images/piper.jpg"/>
                                                 </div>
                                             </div>
-                                            <div class="col s10">
+                                            <div class="col s9 m9 l9">
                                                 <div class="name-wrapper valign-wrapper">
-                                                    <div class="member-name left-align">
+                                                    <div class="member-name2 left-align" >
                                                         Cheng, Jan Kristoffer
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col s12">
-                                            <div class="col s10">
+                                        <div class="col s12 member-wrapper">
+                                            <div class="col s9 m9 l9">
                                                 <div class="name-wrapper valign-wrapper">
                                                     <div class="member-name right-align">
                                                         Cote, Christian Gabriel
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col s2">
+                                            <div class="col s3 m3 l3">
                                                 <div class="member-img">
                                                     <img class="circle" src="images/chris.jpg"/>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col s12">
-                                            <div class="col s2">
+                                        <div class="col s12 member-wrapper">
+                                            <div class="col s3 m3 l3">
                                                 <div class="member-img">
                                                     <img class="circle" src="images/nona.jpg"/>
                                                 </div>
                                             </div>
-                                            <div class="col s10">
+                                            <div class="col s9 m9 l9">
                                                 <div class="name-wrapper valign-wrapper">
-                                                    <div class="member-name left-align">
+                                                    <div class="member-name2 left-align">
                                                         Erive, Winona Louise
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col s12">
-                                            <div class="col s10">
+                                        <div class="col s12 member-wrapper">
+                                            <div class="col s9 m9 l9">
                                                 <div class="name-wrapper valign-wrapper">
                                                     <div class="member-name right-align">
                                                         Seo, Dong Seong
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col s2">
+                                            <div class="col s3 m3 l3">
                                                 <div class="member-img">
                                                     <img class="circle" src="images/jake.jpg"/>
                                                 </div>
