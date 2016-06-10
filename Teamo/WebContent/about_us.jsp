@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
+  
   <!DOCTYPE html>
 <html>
     <head>
@@ -60,8 +61,8 @@
                                 <span class="what-is">The Team</span>
                             </div>
                                         <div class="col s12 member-wrapper">
-                                            <div class="col s3 m3 l2" style="minpx">
-                                                <div class="member-img">
+                                            <div class="col s3 m3 l3" style="minpx">
+                                                <div class="member-img right-align">
                                                     <img class="circle" src="images/piper.jpg"/>
                                                 </div>
                                             </div>
@@ -70,6 +71,9 @@
                                                     <div class="member-name2 left-align" >
                                                         Cheng, Jan Kristoffer
                                                     </div>
+                                                </div>
+                                                <div class="member-description-left">
+                                                    Developer.
                                                 </div>
                                             </div>
                                         </div>
@@ -80,8 +84,11 @@
                                                         Cote, Christian Gabriel
                                                     </div>
                                                 </div>
+                                                <div class="member-description-right">
+                                                    Developer.
+                                                </div>
                                             </div>
-                                            <div class="col s3 m3 l2">
+                                            <div class="col s3 m3 l3">
                                                 <div class="member-img">
                                                     <img class="circle" src="images/chris.jpg"/>
                                                 </div>
@@ -89,7 +96,7 @@
                                         </div>
                                         <div class="col s12 member-wrapper">
                                             <div class="col s3 m3 l3">
-                                                <div class="member-img">
+                                                <div class="member-img right-align">
                                                     <img class="circle" src="images/nona.jpg"/>
                                                 </div>
                                             </div>
@@ -99,21 +106,45 @@
                                                         Erive, Winona Louise
                                                     </div>
                                                 </div>
+                                                <div class="member-description-left">
+                                                    Developer.
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col s12 member-wrapper">
                                             <div class="col s9 m9 l9">
                                                 <div class="name-wrapper valign-wrapper">
-                                                    <div class="member-name right-align">
-                                                        Seo, Dong Seong
+                                                    <div class="member-name2 right-align" >
+                                                        Lim, Ian Chesterson
                                                     </div>
                                                 </div>
+                                                <div class="member-description-right">
+                                                    Developer.
+                                                </div>
                                             </div>
-                                            <div class="col s3 m3 l2">
+                                            <div class="col s3 m3 l3">
                                                 <div class="member-img">
+                                                    <img class="circle" src="images/ian.jpg"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s12 member-wrapper">
+                                            <div class="col s3 m3 l3">
+                                                <div class="member-img right-align">
                                                     <img class="circle" src="images/jake.jpg"/>
                                                 </div>
                                             </div>
+                                            <div class="col s9 m9 l9">
+                                                <div class="name-wrapper valign-wrapper">
+                                                    <div class="member-name left-align">
+                                                        Seo, Dong Seong
+                                                    </div>
+                                                </div>
+                                                <div class="member-description-left">
+                                                    Developer.
+                                                </div>
+                                            </div>
+                                            
                                         </div>
                                         
                                     </div>
