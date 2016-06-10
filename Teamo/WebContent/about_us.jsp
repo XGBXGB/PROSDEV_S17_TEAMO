@@ -44,7 +44,7 @@
                     <div class="row" style="margin-bottom:0;">
                         <div class="col s12 m12 l12">
                             <div class="what-is-teamo">
-                                <span class="what-is">What is</span><span class="teamo-lbl">TEAMO</span><span class="question-mark">?</span>
+                                <span class="what-is">What is</span><span class="teamo-lbl"><br class="hide-on-med-and-up">TEAMO</span><span class="question-mark">?</span>
                             </div>
                             <div class="about-teamo">
                                 <span style="font-family:print clearly;font-size:1.5em;">Teamo</span> is a blogging site which can help you post and express your ideas and interests with ease. <br>It's simple. <br>It's beautiful. <br>It's free.  
@@ -60,7 +60,7 @@
                                 <span class="what-is">The Team</span>
                             </div>
                                         <div class="col s12 member-wrapper">
-                                            <div class="col s3 m3 l3" style="minpx">
+                                            <div class="col s3 m3 l2" style="minpx">
                                                 <div class="member-img">
                                                     <img class="circle" src="images/piper.jpg"/>
                                                 </div>
@@ -81,7 +81,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col s3 m3 l3">
+                                            <div class="col s3 m3 l2">
                                                 <div class="member-img">
                                                     <img class="circle" src="images/chris.jpg"/>
                                                 </div>
@@ -109,7 +109,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col s3 m3 l3">
+                                            <div class="col s3 m3 l2">
                                                 <div class="member-img">
                                                     <img class="circle" src="images/jake.jpg"/>
                                                 </div>
