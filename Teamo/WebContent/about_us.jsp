@@ -149,7 +149,7 @@
                                             <div class="col s9 m9 l9">
                                                 <div class="name-wrapper valign-wrapper">
                                                     <div>
-                                                    <div class="member-name left-align">
+                                                    <div class="member-name2 left-align">
                                                         Seo, Dong Seong
                                                     </div>
                                                     <div class="member-description-left">
