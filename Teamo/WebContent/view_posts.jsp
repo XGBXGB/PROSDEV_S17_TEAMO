@@ -1,3 +1,4 @@
+<%@page import="model.Comment"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -56,21 +57,29 @@
 	       while(iposts.hasNext())
 	       {
 	    	   Post p = iposts.next();
+	    	   Iterator<Comment> comments = p.getComments().iterator();
        %>
-        
+	        
 	        <div class="card blue-grey darken-1">
-	            <div class="card-content white-text">
-	              <span class="card-title"><%=p.getTitle() %></span>
-	              <p class="truncate"><%=p.username() %></p>
-	              <p class="truncate"><%=p.date() %></p>
-	              <p class="truncate"><%=p.getContent() %></p>
-	            </div>
-	            <form>
-	            <div class="card-action">
-	               <input type = "Submit" class=" modal-action modal-close waves-effect waves-green btn white-text" value = "view comments">
-	            </div>
-	            </form>
-	        </div>
+            	<div class="card-content white-text">
+                	<a href="" class="card-title post-title"><span class="orange-text"><%=p.getTitle() %></span></a>
+              		<br>by <span class="author"><%=p.getUsername() %></span> 06/15/16
+              		<p class="truncate"><%=p.getContent() %></p>
+            	</div>
+            	<ul class="collection">
+            	<%
+			       while(comments.hasNext())
+			       {
+			    	   Comment c = comments.next();
+			    %>
+                	<li class="collection-item">
+	                    <span class="commenter"><%=c.getUsername() %> </span><span class="date"><%=c.getDate() %></span>
+	                    <br><%=c.getComment() %>
+                	</li>
+               	<% }
+	            %>
+            	</ul>
+          	</div>
 	        
         <%} %>
         </div>

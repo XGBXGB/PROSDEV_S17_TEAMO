@@ -36,7 +36,7 @@ public class Controller {
 	
 	public List<Post> getPosts()
 	{
-		return pd.getPosts();
+		return pd.getPosts(0, 5);
 	}
 	
 	public void addUser(String email, String username, String password)

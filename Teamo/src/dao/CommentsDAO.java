@@ -47,7 +47,36 @@ public class CommentsDAO {
 			ps = conn.prepareStatement(query);
 		    rs = ps.executeQuery();
 		    while(rs.next()) {
-		    	comments.add(new Comment(rs.getString(1), rs.getInt(2), rs.getInt(3), rs.getString(4)));
+		    	comments.add(new Comment(rs.getString(1), rs.getString(2), rs.getString(3)));
+		    }
+		    conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return comments;
+	}
+	
+	public List<Comment> getComments(int postId, int limit) {
+		List<Comment> comments = new ArrayList<Comment>();
+		Connection conn = DBConnection.getConnection();
+		String query = 
+				"SELECT username, date, content "
+				+ "FROM comments c "
+				+ "INNER JOIN users u "
+				+ "ON u.id = c.user_id "
+				+ "WHERE post_id = ? "
+				+ "ORDER BY date DESC "
+				+ "LIMIT ?";
+		PreparedStatement ps;
+		ResultSet rs;
+		try {
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, postId);
+			ps.setInt(2, limit);
+		    rs = ps.executeQuery();
+		    while(rs.next()) {
+		    	comments.add(new Comment(rs.getString(1), rs.getString(2), rs.getString(3)));
 		    }
 		    conn.close();
 		} catch (SQLException e) {
