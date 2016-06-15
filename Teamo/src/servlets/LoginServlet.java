@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 		{
 			System.out.println("INSIDE USER COOKIE");
 			response.addCookie(new Cookie("user", String.valueOf(user.getId())));
-			request.getSession().setAttribute("Posts", m.getPosts());
+			request.getSession().setAttribute("Posts", m.getPosts(0,5));
 
 			response.sendRedirect("view_posts.jsp");
 		}

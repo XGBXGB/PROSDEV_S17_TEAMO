@@ -61,4 +61,33 @@ public class PostsDAO {
 		}
 		return posts;
 	}
+	
+	public List<Post> searchPosts(int offset, int limit, String searchTerm) {
+		//Connection conn = MySQLConnector.getConnection();
+		Connection conn = DBConnection.getConnection();
+		String query = 
+				"SELECT title, content, username, date FROM posts P "
+				+ "INNER JOIN users U "
+				+ "ON U.id = P.user_id "
+				+ "WHERE title LIKE '%"+searchTerm+"%' OR content LIKE '%"+searchTerm+"%' "
+				+ "OR username LIKE '%"+searchTerm+"%' "
+				+ "ORDER BY date DESC LIMIT ?, ?;";
+		PreparedStatement ps;
+		ResultSet rs;
+		List<Post> posts = new ArrayList<Post>();
+		try {
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, offset);
+			ps.setInt(2, limit);
+		    rs = ps.executeQuery();
+		    while(rs.next()) {
+		    	posts.add(new Post(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)));
+		    }
+		    conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return posts;
+	}
 }

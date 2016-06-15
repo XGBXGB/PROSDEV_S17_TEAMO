@@ -34,10 +34,15 @@ public class Controller {
 		pd.addPost(title, content, userId);
 	}
 	
-	public List<Post> getPosts()
+	public List<Post> getPosts(int a, int b)
 	{
-		return pd.getPosts();
+		return pd.getPosts(a,b);
 	}
+	
+	public List<Post> searchPosts(int offset, int limit, String searchTerm){
+		return pd.searchPosts(offset, limit, searchTerm);
+	}
+	
 	
 	public void addUser(String email, String username, String password)
 	{
