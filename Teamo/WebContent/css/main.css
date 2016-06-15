@@ -220,10 +220,6 @@ html, body {
     }
     .member-name2 {
         font-size: 1em;
-        padding-left:12px;
-    }
-    .member-description-left{
-    	padding-left:12px;
     }
     .member-name {
         font-size: 1em;
@@ -235,4 +231,13 @@ html, body {
         margin-bottom:10px;
     }
     
+}
+@media (max-width:430px){
+    .member-name2 {
+        padding-left:12px;
+    }
+    .member-description-left{
+        padding-left:12px;
+    }
+
 }
