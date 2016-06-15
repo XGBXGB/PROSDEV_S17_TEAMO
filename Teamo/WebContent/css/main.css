@@ -15,6 +15,18 @@ html, body {
     font-size: 1.5em;
      width:100%;
  }
+ 
+ .member-description-left{
+ 	color:white;
+    font-size: 1em;
+    width:100%;
+ }
+  .member-description-right{
+ 	color:white;
+ 	text-align: right;
+    font-size: 1em;
+    width:100%;
+ }
 
 .compose-icon {
     height:100% !important;
@@ -207,11 +219,14 @@ html, body {
         height:65px;
     }
     .member-name2 {
-        font-size: 1.2em;
+        font-size: 1em;
         padding-left:12px;
     }
+    .member-description-left{
+    	padding-left:12px;
+    }
     .member-name {
-        font-size: 1.2em;
+        font-size: 1em;
     }
     .name-wrapper{
         height:60px;

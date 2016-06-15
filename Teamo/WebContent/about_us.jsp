@@ -68,25 +68,31 @@
                                             </div>
                                             <div class="col s9 m9 l9">
                                                 <div class="name-wrapper valign-wrapper">
+                                                    <div>
                                                     <div class="member-name2 left-align" >
                                                         Cheng, Jan Kristoffer
                                                     </div>
-                                                </div>
-                                                <div class="member-description-left">
+                                                    <div class="member-description-left">
                                                     Developer.
+                                                	</div>
+                                                	</div>
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="col s12 member-wrapper">
                                             <div class="col s9 m9 l9">
                                                 <div class="name-wrapper valign-wrapper">
+                                                    <div style="width:100%">
                                                     <div class="member-name right-align">
                                                         Cote, Christian Gabriel
                                                     </div>
-                                                </div>
-                                                <div class="member-description-right">
+                                                    <div class="member-description-right">
                                                     Developer.
+                                                	</div>
+                                                	</div>
                                                 </div>
+                                                
                                             </div>
                                             <div class="col s3 m3 l3">
                                                 <div class="member-img">
@@ -102,25 +108,31 @@
                                             </div>
                                             <div class="col s9 m9 l9">
                                                 <div class="name-wrapper valign-wrapper">
+                                                    <div>
                                                     <div class="member-name2 left-align">
                                                         Erive, Winona Louise
                                                     </div>
-                                                </div>
-                                                <div class="member-description-left">
+                                                    <div class="member-description-left">
                                                     Developer.
+                                                	</div>
+                                                	</div>
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="col s12 member-wrapper">
                                             <div class="col s9 m9 l9">
                                                 <div class="name-wrapper valign-wrapper">
+                                                    <div style="width:100%">
                                                     <div class="member-name2 right-align" >
                                                         Lim, Ian Chesterson
                                                     </div>
-                                                </div>
-                                                <div class="member-description-right">
+                                                    <div class="member-description-right">
                                                     Developer.
+                                                	</div>
+                                                	</div>
                                                 </div>
+                                                
                                             </div>
                                             <div class="col s3 m3 l3">
                                                 <div class="member-img">
@@ -136,13 +148,16 @@
                                             </div>
                                             <div class="col s9 m9 l9">
                                                 <div class="name-wrapper valign-wrapper">
+                                                    <div>
                                                     <div class="member-name left-align">
                                                         Seo, Dong Seong
                                                     </div>
-                                                </div>
-                                                <div class="member-description-left">
+                                                    <div class="member-description-left">
                                                     Developer.
+                                                	</div>
+                                                	</div>
                                                 </div>
+                                                
                                             </div>
                                             
                                         </div>
