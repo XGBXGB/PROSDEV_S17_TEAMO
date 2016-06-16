@@ -34,13 +34,17 @@ public class Controller {
 		pd.addPost(title, content, userId);
 	}
 	
-	public List<Post> getPosts()
+	public List<Post> getPosts(int offset, int limit)
 	{
-		return pd.getPosts();
+		return pd.getPosts(offset, limit);
 	}
 	
 	public void addUser(String email, String username, String password)
 	{
 		ud.addUser(email, username, password);
+	}
+	
+	public int getNoOfPosts() {
+		return pd.getNoOfPosts();
 	}
 }

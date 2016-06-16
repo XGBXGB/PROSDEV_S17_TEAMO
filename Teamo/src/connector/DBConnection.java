@@ -19,7 +19,7 @@ public class DBConnection {
         url = "jdbc:mysql://localhost:3306/";
         database = "teamo";
         username = "root";
-        password = "TaylorSwift13";//tempo
+        password = "password";//tempo
     }
      
 

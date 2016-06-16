@@ -27,6 +27,7 @@ public class SignupServlet extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getSession().setAttribute("Error", "Invalid");
+		System.out.println("something");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
