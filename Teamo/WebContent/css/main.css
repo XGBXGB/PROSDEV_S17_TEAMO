@@ -93,6 +93,11 @@ html, body {
     font-size: 1.5em;
     width:100%;
 }
+.member-name2 {
+    color:white;
+    font-size: 1.5em;
+    width:100%;
+}
 
 .team-desc {
     padding-bottom:50px;
@@ -190,7 +195,6 @@ html, body {
     font-size: 15px;
 }
 
-
 @media (max-width:992px){
     .brand-logo{
         color:pink !important;
@@ -245,6 +249,7 @@ html, body {
     }
     
 }
+
 @media (max-width:360px){
     .member-name2 {
         padding-left:12px;
@@ -253,4 +258,25 @@ html, body {
         padding-left:12px;
     }
 
+
+
+@media (max-width:360px){
+    
+    
+    
+}
+@media (max-width:320px){
+
+}
+
+.author {
+    font-weight: bolder;
+}
+
+.date {
+    font-size: 0.7em;
+}
+
+.post-title {
+    font-weight: bold !important;
 }

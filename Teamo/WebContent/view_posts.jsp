@@ -84,7 +84,11 @@
 	        
 	        <div class="card blue-grey darken-1">
             	<div class="card-content white-text">
+<<<<<<< HEAD
                 	<a class="card-title post-title" onclick="pressed(this);$(this).closest('form').submit();" name = "<%=p.getPostId()%>" id = "<%=p.getPostId()%>" value = "<%=p.getPostId()%>"><span class="orange-text" ><%=p.getTitle() %></span></a>
+=======
+                	<a href="" class="card-title post-title"><span class="orange-text"><%=p.getTitle() %></span></a>
+>>>>>>> feature/comments
               		<br>by <span class="author"><%=p.getUsername() %></span> 06/15/16
               		<p class="truncate"><%=p.getContent() %></p>
             	</div>
@@ -96,7 +100,11 @@
 			    %>
                 	<li class="collection-item">
 	                    <span class="commenter"><%=c.getUsername() %> </span><span class="date"><%=c.getDate() %></span>
+<<<<<<< HEAD
 	                    <br>"<%=c.getComment() %>"
+=======
+	                    <br><%=c.getComment() %>
+>>>>>>> feature/comments
                 	</li>
                	<% }
 	            %>

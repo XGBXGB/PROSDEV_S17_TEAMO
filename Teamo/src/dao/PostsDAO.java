@@ -136,6 +136,14 @@ public class PostsDAO {
 		    while(rs.next()) {
 		    	posts.add(new Post(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
 		    }
+		    for(Post p : posts) {
+		    	System.out.println(p.getPostId());
+		    	
+		    	p.setComments(commentsDAO.getComments(p.getPostId(), 5));
+		    	for(Comment c : p.getComments()) {
+		    		System.out.println(c.getComment());
+		    	}
+		    }
 		    conn.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
