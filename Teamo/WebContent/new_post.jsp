@@ -45,15 +45,19 @@
       </section>
         
         <div class="container">
-          <form action="NewPostServlet" method="post">      
+          <form action="NewPostServlet" method="post" enctype="multipart/form-data">
+          	 <div class ="input-field">
+          	 	<input type='file' name = "image">
+				<img id="myImg" src="#" alt="your image" style="display: none;"/>
+          	 </div>
 	         <div class="input-field">
                     <input id="title" class="white-text" type="text" name = "title">
                     <label for="title">Title</label>
-                </div>
-                <div class="input-field">
+             </div>
+             <div class="input-field">
                     <textarea id="content" class="materialize-textarea white-text" name = "content"></textarea>
                     <label for="content">Content</label>
-                </div>
+             </div>
                 <button type = "submit" class="waves-effect waves-light btn right"><i class="material-icons left">cloud</i>Submit</button>
             </form>
         </div>
@@ -94,6 +98,20 @@
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
             $(".button-collapse").sideNav();
+            
+            $(":file").change(function () {
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = imageIsLoaded;
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+
+            function imageIsLoaded(e) {
+                $('img').attr('src', e.target.result);
+                $('img').fadeIn();
+            };
+
         </script>
     </body>
 </html>

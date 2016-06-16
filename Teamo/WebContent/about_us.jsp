@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 
-  
-  <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html>
     <head>
       <!--Import Google Icon Font-->
@@ -30,10 +30,10 @@
                                 <li><a href="index.jsp">Logout</a></li>
                             </ul>
                             <ul class="side-nav teal" id="mobile-demo">
-                                <li><a href="new_post.html" class="white-text"><i class="material-icons left">mode_edit</i>New Post</a></li>
-                                <li><a href="view_posts.html" class="white-text">Home</a></li>
-                                <li class="active"><a href="about_us.html" class="white-text">About Us</a></li>
-                                <li><a href="index.html" class="white-text">Logout</a></li>
+                                <li><a href="new_post.jsp" class="white-text"><i class="material-icons left">mode_edit</i>New Post</a></li>
+                                <li><a href="view_posts.jsp" class="white-text">Home</a></li>
+                                <li class="active"><a href="about_us.jsp" class="white-text">About Us</a></li>
+                                <li><a href="index.jsp" class="white-text">Logout</a></li>
                             </ul>
                         </div>
                     </nav>

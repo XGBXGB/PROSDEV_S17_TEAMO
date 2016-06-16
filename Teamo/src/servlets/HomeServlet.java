@@ -39,7 +39,7 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Controller m = new Controller();
-		request.getSession().setAttribute("Posts", m.getPosts(1,4));
+		request.getSession().setAttribute("Posts", m.getPosts(0,5));
 		response.sendRedirect("view_posts.jsp");
 		
 	}

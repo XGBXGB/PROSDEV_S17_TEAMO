@@ -34,9 +34,13 @@ public class LoginServlet extends HttpServlet {
 		if(user != null)
 		{
 			System.out.println("INSIDE USER COOKIE");
-			response.addCookie(new Cookie("user", String.valueOf(user.getId())));
-			request.getSession().setAttribute("Posts", m.getPosts(0,5));
 
+			int noOfRecords = m.getNoOfPosts();
+			int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / 5);
+			response.addCookie(new Cookie("user", String.valueOf(user.getId())));
+			request.getSession().setAttribute("Posts", m.getPosts(0, 5));
+			request.getSession().setAttribute("currentPage", 1);
+			request.getSession().setAttribute("noOfPages", noOfPages);
 			response.sendRedirect("view_posts.jsp");
 		}
 		else

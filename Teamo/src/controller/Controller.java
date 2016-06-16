@@ -1,6 +1,8 @@
 package controller;
 
 import java.util.List;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import dao.CommentsDAO;
@@ -15,56 +17,50 @@ public class Controller {
 	private UsersDAO ud;
 	private PostsDAO pd;
 	private CommentsDAO cd;
-	public Controller()
-	{
+
+	public Controller() {
 		ud = new UsersDAO();
 		pd = new PostsDAO();
 		cd = new CommentsDAO();
 	}
-	
-	public User getUser(String username, String password)
-	{
+
+	public User getUser(String username, String password) {
 		return ud.login(username, password);
 	}
-	
-	public String getUserName(int id)
-	{
+
+	public String getUserName(int id) {
 		return ud.getUserName(id);
 	}
-	
-	public void addPost(String title, String content, int userId)
-	{
-		pd.addPost(title, content, userId);
+
+	public void addPost(String title, String content, InputStream inputStream, int userId) throws IOException {
+		pd.addPost(title, content, inputStream, userId);
 	}
-	
-	public List<Post> getPosts(int offset, int limit)
-	{
-		return pd.getPosts(offset,limit);
+
+	public List<Post> getPosts(int offset, int limit) {
+		return pd.getPosts(offset, limit);
 	}
-	
-	public List<Post> searchPosts(int offset, int limit, String searchTerm){
+
+	public List<Post> searchPosts(int offset, int limit, String searchTerm) {
 		return pd.searchPosts(offset, limit, searchTerm);
 	}
-	
-	
-	public void addUser(String email, String username, String password)
-	{
+
+	public void addUser(String email, String username, String password) {
 		ud.addUser(email, username, password);
 	}
-	
-	public Post getPost(int id, int type)
-	{
+
+	public Post getPost(int id, int type) {
 		return pd.getPost(id, type);
 	}
-	
-	public List<Comment> getComments(int id)
-	{
-		return cd.getComments(id);		
+
+	public List<Comment> getComments(int id) {
+		return cd.getComments(id);
 	}
 
 	public void addComment(String postcomment, int postid, int userId) {
 		cd.addComment(postcomment, postid, userId);
 	}
-	
-	
+
+	public int getNoOfPosts() {
+		return pd.getNoOfPosts();
+	}
 }
