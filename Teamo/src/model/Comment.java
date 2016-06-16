@@ -1,20 +1,18 @@
 package model;
 
 public class Comment {
+	private String username;
 	private String comment;
-	private int postId;
-	private int userId;
 	private String date;
 
 	public Comment() {
 
 	}
 
-	public Comment(String comment, int postId, int userId, String date) {
+	public Comment(String username, String date, String comment) {
 		super();
+		this.username = username;
 		this.comment = comment;
-		this.postId = postId;
-		this.userId = userId;
 		this.date = date;
 	}
 
@@ -26,24 +24,20 @@ public class Comment {
 		this.comment = comment;
 	}
 
-	public int getPostId() {
-		return postId;
-	}
-	
 	public String getDate() {
 		return date;
 	}
 
-	public void setPostId(int postId) {
-		this.postId = postId;
+	public String getUsername() {
+		return username;
 	}
 
-	public int getUserId() {
-		return userId;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 }

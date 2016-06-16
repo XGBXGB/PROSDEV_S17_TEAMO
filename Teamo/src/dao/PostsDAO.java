@@ -11,11 +11,18 @@ import java.util.List;
 
 import connector.DBConnection;
 import connector.MySQLConnector;
+import model.Comment;
 import model.Post;
 import model.User;
 
 public class PostsDAO {
 
+	private CommentsDAO commentsDAO;
+	
+	public PostsDAO() {
+		commentsDAO = new CommentsDAO();
+	}
+	
 	public void addPost(String title, String content, int userId) {
 		//Connection conn = MySQLConnector.getConnection();
 		Connection conn = DBConnection.getConnection();
@@ -35,11 +42,48 @@ public class PostsDAO {
 		}
 	}
 	
+	public Post getPost(int id,int type) {
+		//Connection conn = MySQLConnector.getConnection();
+		Connection conn = DBConnection.getConnection();
+		String query = 
+				"SELECT P.id, title, content, username, date FROM posts P "
+				+ "INNER JOIN users U "
+				+ "ON U.id = P.user_id "
+				+ "WHERE P.id = " + id + " ;";
+		PreparedStatement ps;
+		ResultSet rs;
+		List<Post> posts = new ArrayList<Post>();
+		try {
+			ps = conn.prepareStatement(query);
+		    rs = ps.executeQuery();
+		    while(rs.next()) {
+		    	posts.add(new Post(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
+		    }
+		    for(Post p : posts) {
+		    	System.out.println(p.getPostId());
+		    	
+		    	if(type == 1)
+		    		p.setComments(commentsDAO.getComments(p.getPostId(), 5));
+		    	else
+		    		p.setComments(commentsDAO.getComments(p.getPostId()));
+		    	for(Comment c : p.getComments()) {
+		    		System.out.println(c.getComment());
+		    	}
+		    }
+		    conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return posts.get(0);
+	}
+	
+	
 	public List<Post> getPosts(int offset, int limit) {
 		//Connection conn = MySQLConnector.getConnection();
 		Connection conn = DBConnection.getConnection();
 		String query = 
-				"SELECT title, content, username, date FROM posts P "
+				"SELECT P.id, title, content, username, date FROM posts P "
 				+ "INNER JOIN users U "
 				+ "ON U.id = P.user_id "
 				+ "ORDER BY date DESC LIMIT ?, ?;";
@@ -52,7 +96,15 @@ public class PostsDAO {
 			ps.setInt(2, limit);
 		    rs = ps.executeQuery();
 		    while(rs.next()) {
-		    	posts.add(new Post(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)));
+		    	posts.add(new Post(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
+		    }
+		    for(Post p : posts) {
+		    	System.out.println(p.getPostId());
+		    	
+		    	p.setComments(commentsDAO.getComments(p.getPostId(), 5));
+		    	for(Comment c : p.getComments()) {
+		    		System.out.println(c.getComment());
+		    	}
 		    }
 		    conn.close();
 		} catch (SQLException e) {

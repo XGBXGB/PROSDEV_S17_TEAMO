@@ -45,7 +45,7 @@ public class NewPostServlet extends HttpServlet {
 		  }
 		}
 		m.addPost(request.getParameter("title"), request.getParameter("content"), Integer.parseInt(user));
-		request.getSession().setAttribute("Posts", m.getPosts());
+		request.getSession().setAttribute("Posts", m.getPosts(1,4));
 		System.out.println("INSIDE DO POST");
 		response.sendRedirect("view_posts.jsp");
 		
