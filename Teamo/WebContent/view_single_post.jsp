@@ -62,14 +62,13 @@
 					<h2><%=post.getTitle()%></h2>
 					<h6>
 						by
-						<%=post.getUsername()%></h2>
-						&nbsp
+						<%=post.getUsername()%></h6>
 						<p><%=post.getContent()%></p>
 				</div>
 				<div class="card-content white-text">
 					<h5 class="white-text">
 						COMMENTS
-						</h3>
+						</h5>
 
 						<%
 							List<Comment> comments = post.getComments();

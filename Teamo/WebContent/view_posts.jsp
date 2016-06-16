@@ -91,7 +91,7 @@
 		<div class="row">
 
 	<form action="ViewSinglePostServlet" method="post">
-		<input type="hidden" id="vphidden" name="vphidden" value="1">
+		<input type="hidden" id="vphidden" name="vphidden" value="0">
 		<%
 			while (iposts.hasNext()) {
 				Post p = iposts.next();
