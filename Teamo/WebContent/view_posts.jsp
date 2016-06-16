@@ -1,3 +1,4 @@
+<%@page import="model.Comment"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -50,13 +51,17 @@
                                 </div>
                             </li>
                             <li><a class="waves-effect waves-light btn compose-btn" href="new_post.jsp"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
-                            <li class="active"><a href="view_posts.jsp">Home</a></li>
+                            <form action="HomeServlet" method = "post" style="display: inline;">
+                            <li class="active"><a onClick="$(this).closest('form').submit();" >Home</a></li>
+                            </form>
                             <li><a href="about_us.jsp">About Us</a></li>
                             <li><a href="index.jsp">Logout</a></li>
                         </ul>
                         <ul class="side-nav teal" id="mobile-demo">
                             <li><a href="new_post.jsp" class="white-text"><i class="material-icons left">mode_edit</i>New Post</a></li>
-                            <li class="active"><a href="view_posts.jsp" class="white-text">Home</a></li>
+                           <form action="HomeServlet" method = "post" style="display: inline;">
+							<li class="active"><a onClick="$(this).closest('form').submit();" class="white-text">Home</a></li>
+							</form>
                             <li><a href="about_us.jsp" class="white-text">About Us</a></li>
                             <li><a href="index.jsp" class="white-text">Logout</a></li>
                         </ul>
@@ -65,6 +70,7 @@
             </div>
             </section>
       </section>
+<form action="ViewSinglePostServlet" method="post">
 
 
       <div class="container center-aligned">
@@ -73,23 +79,33 @@
 	       while(iposts.hasNext())
 	       {
 	    	   Post p = iposts.next();
+	    	   Iterator<Comment> comments = p.getComments().iterator();
        %>
-        
+	        
 	        <div class="card blue-grey darken-1">
-	            <div class="card-content white-text">
-	              <span class="card-title"><%=p.getTitle() %></span>
-	              <p class="truncate"><%=p.username() %></p>
-	              <p class="truncate"><%=p.date() %></p>
-	              <p class="truncate"><%=p.getContent() %></p>
-	            </div>
-	            <form>
-	            <div class="card-action">
-	               <input type = "Submit" class=" modal-action modal-close waves-effect waves-green btn white-text" value = "view comments">
-	            </div>
-	            </form>
-	        </div>
+            	<div class="card-content white-text">
+                	<a class="card-title post-title" onclick="pressed(this);$(this).closest('form').submit();" name = "<%=p.getPostId()%>" id = "<%=p.getPostId()%>" value = "<%=p.getPostId()%>"><span class="orange-text" ><%=p.getTitle() %></span></a>
+              		<br>by <span class="author"><%=p.getUsername() %></span> 06/15/16
+              		<p class="truncate"><%=p.getContent() %></p>
+            	</div>
+            	<ul class="collection">
+            	<%
+			       while(comments.hasNext())
+			       {
+			    	   Comment c = comments.next();
+			    %>
+                	<li class="collection-item">
+	                    <span class="commenter"><%=c.getUsername() %> </span><span class="date"><%=c.getDate() %></span>
+	                    <br>"<%=c.getComment() %>"
+                	</li>
+               	<% }
+	            %>
+            	</ul>
+          	</div>
 	        
         <%} %>
+        <input type = "hidden" id = "vphidden" name = "vphidden" value = "1">
+         </form>
         </div>
       </div>
 
@@ -120,7 +136,6 @@
         $('select').material_select();
         $(window).scroll(function() {
                     var scroll = $(window).scrollTop();
-
                     if (scroll >= 100) {
                         $('.nav-wrapper').removeClass("grow");
                         $('.nav-wrapper').addClass("teal");
@@ -139,6 +154,13 @@
                 });
       });
       $(".button-collapse").sideNav();
+      
+      function pressed(element)
+   	  {
+   		var pressedBtn = element.id;
+   		document.getElementById("vphidden").value = document.getElementById(pressedBtn).name;
+      }
     </script>
   </body>
 </html>
+

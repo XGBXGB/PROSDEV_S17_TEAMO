@@ -3,8 +3,10 @@ package controller;
 import java.util.List;
 import java.util.ArrayList;
 
+import dao.CommentsDAO;
 import dao.PostsDAO;
 import dao.UsersDAO;
+import model.Comment;
 import model.Post;
 import model.User;
 
@@ -12,11 +14,12 @@ public class Controller {
 
 	private UsersDAO ud;
 	private PostsDAO pd;
-	
+	private CommentsDAO cd;
 	public Controller()
 	{
 		ud = new UsersDAO();
 		pd = new PostsDAO();
+		cd = new CommentsDAO();
 	}
 	
 	public User getUser(String username, String password)
@@ -34,9 +37,15 @@ public class Controller {
 		pd.addPost(title, content, userId);
 	}
 	
+<<<<<<< HEAD
 	public List<Post> getPosts(int a, int b)
 	{
 		return pd.getPosts(a,b);
+=======
+	public List<Post> getPosts(int offset, int limit)
+	{
+		return pd.getPosts(offset,limit);
+>>>>>>> indivpost
 	}
 	
 	public List<Post> searchPosts(int offset, int limit, String searchTerm){
@@ -48,4 +57,20 @@ public class Controller {
 	{
 		ud.addUser(email, username, password);
 	}
+	
+	public Post getPost(int id, int type)
+	{
+		return pd.getPost(id, type);
+	}
+	
+	public List<Comment> getComments(int id)
+	{
+		return cd.getComments(id);		
+	}
+
+	public void addComment(String postcomment, int postid, int userId) {
+		cd.addComment(postcomment, postid, userId);
+	}
+	
+	
 }
