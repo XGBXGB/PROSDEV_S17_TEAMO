@@ -37,15 +37,9 @@ public class Controller {
 		pd.addPost(title, content, userId);
 	}
 	
-<<<<<<< HEAD
-	public List<Post> getPosts(int a, int b)
-	{
-		return pd.getPosts(a,b);
-=======
 	public List<Post> getPosts(int offset, int limit)
 	{
 		return pd.getPosts(offset,limit);
->>>>>>> indivpost
 	}
 	
 	public List<Post> searchPosts(int offset, int limit, String searchTerm){

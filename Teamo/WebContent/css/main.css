@@ -34,6 +34,10 @@ html, body {
     line-height:40px !important;
 }
 
+.post-title{
+	cursor: pointer;
+}
+
 .compose-btn {
     width:50px;
     padding:0

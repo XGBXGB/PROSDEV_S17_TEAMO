@@ -21,8 +21,15 @@
 
     <body>
         <%
-		List<Post> posts = (List<Post>)session.getAttribute("Posts");
-    	Iterator<Post> iposts = posts.iterator();
+        List<Post> searchedPosts =  (List<Post>)session.getAttribute("SearchPosts");
+    	Iterator<Post> iposts;
+    	if(searchedPosts!=null){
+    		iposts = searchedPosts.iterator();
+    		session.removeAttribute("SearchPosts");
+    	}else{
+			List<Post> posts = (List<Post>)session.getAttribute("Posts");
+	    	iposts = posts.iterator();
+    	}
         %>
     
       <section class="header">
@@ -33,7 +40,17 @@
                         <a href="#" class="brand-logo pad-nav-top"> TEAMO</a>
                         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                         <ul id="nav-mobile" class="right hide-on-med-and-down pad-nav-top">
-                            <li><a class="waves-effect waves-light btn compose-btn" href="new_post.jsp"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
+			    <li>
+                                <div class="search-bar" >
+                                <form id="searchserv" action="SearchServlet" method="post">
+                                    <div class="input-field search-field" style="height:40px">
+                                      <input placeholder="Search Teamo" id="search" name="teamosearchbox" type="search" style="height:100% !important;margin:0;">
+                                      <label for="search" style="height:100%;"><i class="material-icons" style="font-size:30px;height:100%;line-height:1.3">search</i></label>
+                                    </div>
+                                </form>
+                                </div>
+                            </li>                            
+			    <li><a class="waves-effect waves-light btn compose-btn" href="new_post.jsp"><i class="material-icons compose-icon" style="">mode_edit</i></a></li>
                             <form action="HomeServlet" method = "post" style="display: inline;">
                             <li class="active"><a onClick="$(this).closest('form').submit();" >Home</a></li>
                             </form>
@@ -109,6 +126,12 @@
     <script type="text/javascript" src="materialize/js/materialize.js"></script>
     <script>
       $(document).ready(function() {
+	$(".search-field").keypress(function(event) {
+    		    if (event.which == 13) {
+    		        event.preventDefault();
+    		        $("#searchserv").submit();
+    		    }
+    		});
         $('select').material_select();
         $(window).scroll(function() {
                     var scroll = $(window).scrollTop();

@@ -113,13 +113,13 @@ public class PostsDAO {
 		}
 		return posts;
 	}
-<<<<<<< HEAD
+
 	
 	public List<Post> searchPosts(int offset, int limit, String searchTerm) {
 		//Connection conn = MySQLConnector.getConnection();
 		Connection conn = DBConnection.getConnection();
 		String query = 
-				"SELECT title, content, username, date FROM posts P "
+				"SELECT P.id, title, content, username, date FROM posts P "
 				+ "INNER JOIN users U "
 				+ "ON U.id = P.user_id "
 				+ "WHERE title LIKE '%"+searchTerm+"%' OR content LIKE '%"+searchTerm+"%' "
@@ -134,7 +134,7 @@ public class PostsDAO {
 			ps.setInt(2, limit);
 		    rs = ps.executeQuery();
 		    while(rs.next()) {
-		    	posts.add(new Post(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)));
+		    	posts.add(new Post(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
 		    }
 		    conn.close();
 		} catch (SQLException e) {
@@ -144,6 +144,3 @@ public class PostsDAO {
 		return posts;
 	}
 }
-=======
-}
->>>>>>> indivpost
