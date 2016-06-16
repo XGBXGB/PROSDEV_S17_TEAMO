@@ -1,6 +1,8 @@
 package controller;
 
 import java.util.List;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import dao.PostsDAO;
@@ -29,9 +31,9 @@ public class Controller {
 		return ud.getUserName(id);
 	}
 	
-	public void addPost(String title, String content, int userId)
+	public void addPost(String title, String content, InputStream inputStream, int userId) throws IOException
 	{
-		pd.addPost(title, content, userId);
+		pd.addPost(title, content, inputStream, userId);
 	}
 	
 	public List<Post> getPosts(int offset, int limit)

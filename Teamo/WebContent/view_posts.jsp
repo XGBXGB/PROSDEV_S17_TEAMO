@@ -4,6 +4,10 @@
 	pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Post"%>
+<%@page import="java.awt.image.BufferedImage"%>
+<%@page import="javax.imageio.ImageIO"%>
+<%@page import="java.io.*"%>
+<%@page import="javax.servlet.annotation.MultipartConfig"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,10 +66,27 @@
 			<%
 				while (iposts.hasNext()) {
 					Post p = iposts.next();
+					String b64 = "";
+					if(p.getImage() != null) {
+					ByteArrayOutputStream baos = new ByteArrayOutputStream();
+					ImageIO.write(p.getImage(), "jpg", baos);
+					baos.flush();
+					byte[] imageInByteArray = baos.toByteArray();
+					baos.close();
+					b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+					}
 			%>
 
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
+					<%
+					if(!b64.equals("")) {
+					%>
+					<img src="data:image/jpg;base64, <%=b64%>"
+						style="max-height: 300px" /> <br />
+					<%
+					}
+					%>
 					<span class="card-title"><%=p.getTitle()%></span>
 					<p class="truncate"><%=p.username()%></p>
 					<p class="truncate"><%=p.date()%></p>
@@ -89,46 +110,50 @@
 	<div class="container center-align">
 		<ul class="pagination">
 			<%
-			int currentPage = (Integer) session.getAttribute("currentPage");
-			int noOfPages = (Integer) session.getAttribute("noOfPages");
-			if(currentPage == 1) {
+				int currentPage = (Integer) session.getAttribute("currentPage");
+				int noOfPages = (Integer) session.getAttribute("noOfPages");
+				if (currentPage == 1) {
 			%>
 			<li class="disabled"><a href=""><i class="material-icons">chevron_left</i></a></li>
 			<%
-			} else {
-			%>
-			<li class="waves-effect"><a href="PostsServlet?method=doGet&currentPage=<%=currentPage - 1%>"><i class="material-icons">chevron_left</i></a></li>
-			<%
-			}
-			int from = ((currentPage - 1) / 5)*5 + 1;
-			int to = ((currentPage - 1) / 5)*5 + 5;
-			if(to >= noOfPages) {
-				to = noOfPages;
-			}
-			for (int i = from; i <= to; i++) {
-				if(i == currentPage) { 
-			%>
-			<li class="active"><a
-				href="PostsServlet?method=doGet&currentPage=<%=i%>"><%=i %></a></li>
-			<%
-				} else {	
+				} else {
 			%>
 			<li class="waves-effect"><a
-				href="PostsServlet?method=doGet&currentPage=<%=i%>"><%= i %></a></li>
+				href="PostsServlet?method=doGet&currentPage=<%=currentPage - 1%>"><i
+					class="material-icons">chevron_left</i></a></li>
 			<%
 				}
-			}
+				int from = ((currentPage - 1) / 5) * 5 + 1;
+				int to = ((currentPage - 1) / 5) * 5 + 5;
+				if (to >= noOfPages) {
+					to = noOfPages;
+				}
+				for (int i = from; i <= to; i++) {
+					if (i == currentPage) {
 			%>
-			<% 
-			if(currentPage == noOfPages) {
-			%>
-				<li class="disabled"><a href=""><i class="material-icons">chevron_right</i></a></li>
+			<li class="active"><a
+				href="PostsServlet?method=doGet&currentPage=<%=i%>"><%=i%></a></li>
 			<%
-			} else {
+				} else {
 			%>
-				<li class="waves-effect"><a href="PostsServlet?method=doGet&currentPage=<%=currentPage + 1%>"><i class="material-icons">chevron_right</i></a></li>
+			<li class="waves-effect"><a
+				href="PostsServlet?method=doGet&currentPage=<%=i%>"><%=i%></a></li>
 			<%
-			}
+				}
+				}
+			%>
+			<%
+				if (currentPage == noOfPages) {
+			%>
+			<li class="disabled"><a href=""><i class="material-icons">chevron_right</i></a></li>
+			<%
+				} else {
+			%>
+			<li class="waves-effect"><a
+				href="PostsServlet?method=doGet&currentPage=<%=currentPage + 1%>"><i
+					class="material-icons">chevron_right</i></a></li>
+			<%
+				}
 			%>
 		</ul>
 	</div>
