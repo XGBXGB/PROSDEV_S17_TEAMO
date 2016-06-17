@@ -40,6 +40,7 @@ public class CommentsDAO {
 				+ "FROM comments c "
 				+ "INNER JOIN users u "
 				+ "ON u.id = c.user_id "
+				+ "WHERE post_id = " + postId + " " 
 				+ "ORDER BY date";
 		PreparedStatement ps;
 		ResultSet rs;
@@ -65,15 +66,14 @@ public class CommentsDAO {
 				+ "FROM comments c "
 				+ "INNER JOIN users u "
 				+ "ON u.id = c.user_id "
-				+ "WHERE post_id = ? "
+				+ "WHERE post_id = " + postId + " "
 				+ "ORDER BY date DESC "
 				+ "LIMIT ?";
 		PreparedStatement ps;
 		ResultSet rs;
 		try {
 			ps = conn.prepareStatement(query);
-			ps.setInt(1, postId);
-			ps.setInt(2, limit);
+			ps.setInt(1, limit);
 		    rs = ps.executeQuery();
 		    while(rs.next()) {
 		    	comments.add(new Comment(rs.getString(1), rs.getString(2), rs.getString(3)));
